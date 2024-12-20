@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pending Issues ({{ pending_issues.count }})</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Accepted({{ accepted_issues.count }})</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rejected({{ rejected_issues.count }})</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Completed({{ completed_issues.count }})</th>
+</tr>
+</thead>
+<tbody class="bg-white divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4">
+{% for issue in pending_issues %}
+<div>
+<div class="text-sm font-medium text-gray-900">{{ issue.subject }}</div>
+<div class="text-sm text-gray-500"> By {{ issue.username }} on {{ issue.created_at|date:"F j, Y" }}
+<p>Description : {{issue.matter}} </p>
+</div>
+</div>
+{% endfor %}
+</td>
+<td class="px-6 py-4">
+{% for issue in accepted_issues %}
+<div>
+<div class="text-sm font-medium text-gray-900">{{ issue.subject }}</div>
+<div class="text-sm text-gray-500"> By {{ issue.username }} on {{ issue.created_at|date:"F j, Y" }}
+<p>Description : {{issue.matter}} </p>
+</div>
+</div>
+{% endfor %}
+</td>
+<td class="px-6 py-4">
+{% for issue in rejected_issues %}
+<div>
+<div class="text-sm font-medium text-gray-900">{{ issue.subject }}</div>
+<div class="text-sm text-gray-500"> By {{ issue.username }} on {{ issue.created_at|date:"F j, Y" }}
+<p>Description : {{issue.matter}} </p>
+</div>
+</div>
+{% endfor %}
+</td>
+<td class="px-6 py-4">
+{% for issue in completed_issues %}
+<div>
+<div class="text-sm font-medium text-gray-900">{{ issue.subject }}</div>
+<div class="text-sm text-gray-500"> By {{ issue.username }} on {{ issue.created_at|date:"F j, Y" }}
+<p>Description : {{issue.matter}} </p>
+</div>
+</div>
+{% endfor %}
+</td>
+</tr>
+</tbody>
+</table>
+
+{% endblock %}
