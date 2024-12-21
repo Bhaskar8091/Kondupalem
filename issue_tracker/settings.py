@@ -1,13 +1,12 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from django.core.wsgi import get_wsgi_application
 
 # Load environment variables
-load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = '$a28k5h26igq!4p048(%rfnle5=v8+1wb%da@c!wz+0=!m&m(+'
 
 DEBUG = True
 
@@ -51,8 +50,7 @@ TEMPLATES = [
         },
     },
 ]
-
-#WSGI_APPLICATION = 'issue_tracker.wsgi.application'
+application = get_wsgi_application
 
 DATABASES = {
     'default': {
@@ -95,5 +93,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER='thatiparthib4@gmail.com'
-EMAIL_HOST_PASSWORD='Bhaskar@02'  # or the generated app password
+EMAIL_HOST_PASSWORD='ryik xtya gzoc mkix'
+ADMIN_EMAIL='thatiparthib4@gmail.com'  # or the generated app password
 EMAIL_USE_TLS = True

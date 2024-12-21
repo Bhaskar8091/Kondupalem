@@ -24,6 +24,7 @@ def submit_issue(request):
             #                 'New Issue Submitted',
             #                     f'New issue submitted by {issue.username}\nSubject: {issue.subject}',
             #                     settings.EMAIL_HOST_USER,
+            #                     ['thatiparthib4@gmail.com'],
             #                     fail_silently=False,
             #             )      
             
